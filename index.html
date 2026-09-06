@@ -112,7 +112,33 @@ h1 {
     line-height: 1.8;
     margin-bottom: 15px;
 }
-.socials {
+.photos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px auto 30px;
+    max-width: 900px;
+}
+
+.photos img {
+    width: 42%;
+    max-width: 400px;
+    border-radius: 18px;
+    border: 1px solid white;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .photos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photos img {
+        width: 90%;
+    }
+}
+   .socials {
     margin-top: 30px;
     display: flex;
     justify-content: center;
@@ -321,7 +347,11 @@ body {
         pensés pour faire bouger le public et partager sa passion de la musique.
     </p>
 </div>
-    <div class="socials">
+   <div class="photos">
+    <img src="IMG_0961.jpeg" alt="DJ CHAGGY en train de mixer">
+    <img src="IMG_0973.jpeg" alt="DJ CHAGGY en train de mixer">
+</div> 
+   <div class="socials">
     <a href="https://youtube.com/@djchaggyofficial" target="_blank">▶️ YouTube</a>
     <a href="https://djchaggy.bandcamp.com" target="_blank">🎵 Bandcamp</a>
     <a href="https://www.instagram.com/dj_chaggy_/" target="_blank">📸 Instagram</a>
