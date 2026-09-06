@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ CHAGGY</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+html {
+    background: url("fond.jpg") center center / 100% 100% fixed no-repeat;
+}
+    
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("fond.jpg") center center / cover no-repeat;
+    z-index: -1;
+}
+
+body {
+    margin: 0;
+    background: transparent;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+    .container {
+    padding-top: 70px;
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    text-align: center;
+}s
+
+.subtitle {
+    color: white !important;
+}
+    
+h1 {
+        font-size: 70px;
+        letter-spacing: 8px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 18px;
+        letter-spacing: 4px;
+        margin-bottom: 40px;
+    }
+
+    .button {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    border: 1px solid white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+}
+
+    button:hover {
+        background: white;
+        color: black;
+    }
+
+    .glow {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: #3030ff;
+        filter: blur(180px);
+        opacity: 0.25;
+        border-radius: 50%;
+    }
+.bio {
+    max-width: 650px;
+    margin: 60px auto 40px;
+    text-align: center;
+}
+
+.bio h2 {
+    font-size: 18px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.bio p {
+    color: white;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+.socials {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.socials a {
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: white;
+    border-color: white;
+}
+.events {
+    margin-top: 40px;
+    padding: 80px 20px;
+    text-align: center;
+    display: block;
+    clear: both;
+}
+
+.events h2 {
+    font-size: 45px;
+    letter-spacing: 6px;
+    margin-bottom: 10px;
+}
+
+.events-subtitle {
+    color: #777;
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 45px;
+}
+
+.event-card {
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 28px;
+    background: #0d0d0d;
+    border: 1px solid #292929;
+    border-radius: 16px;
+    text-align: left;
+}
+
+.event-card h3 {
+    font-size: 21px;
+    margin: 12px 0 18px;
+}
+
+.event-card p {
+    color: #999;
+    margin: 7px 0;
+    letter-spacing: 1px;
+}
+
+.event-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.upcoming .event-status {
+    border: 1px solid #555;
+}
+
+.finished {
+    opacity: 0.55;
+}
+
+.finished .event-status {
+    border: 1px solid #333;
+}
+
+@media (max-width: 600px) {
+    .events h2 {
+    font-size: 80px;
+    color: white;
+    display: inline-block;
+    padding: 12px 25px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 15px;
+    text-shadow: 0 0 10px white;
+}
+.event-card {
+    padding: 22px;
+}
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #222;
+    z-index: 100;
+}
+
+.logo-nav {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 18px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .logo-nav {
+        font-size: 12px;
+    }
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+html, body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 1500px;
+}
+</style>
+</head>
+
+<body>
+<script>
+    window.addEventListener("load", function() {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 100);
+    });
+</script>
+<nav class="navbar">
+    <a href="#accueil" class="logo-nav">DJ CHAGGY</a>
+
+    <div class="nav-links">
+        <a href="#accueil">ACCUEIL</a>
+        <a href="#events">EVENTS</a>
+        <a href="mixes.html">MIXES</a>
+    </div>
+</nav>
+
+<div class="glow"></div>
+
+<div class="container" id="accueil">
+    <h1>DJ CHAGGY</h1>
+    <p class="subtitle">DJ • HOUSE • ELECTRONIC</p>
+    <a href="mixes.html" class="button">ÉCOUTER MES MIXES</a>
+    <div class="bio">
+    <h2>À PROPOS</h2>
+    <p>
+        DJ CHAGGY est un jeune DJ passionné par la House et l’Electronic,
+        basé en Bretagne, plus précisément dans les alentours de Quiberon et Lorient.
+    </p>
+    <p>
+        Entre basses énergiques, grooves entraînants et remixes, il crée des sets
+        pensés pour faire bouger le public et partager sa passion de la musique.
+    </p>
+</div>
+    <div class="socials">
+    <a href="https://youtube.com/@djchaggyofficial" target="_blank">▶️ YouTube</a>
+    <a href="https://djchaggy.bandcamp.com" target="_blank">🎵 Bandcamp</a>
+    <a href="https://www.instagram.com/dj_chaggy_/" target="_blank">📸 Instagram</a>
+</div>
+</div>
+<section class="events" id="events">
+
+    <h2>EVENTS</h2>
+
+    <div class="event-card upcoming">
+        <div class="event-status">À VENIR</div>
+        <h3>DJ CHAGGY — PROCHAIN SET</h3>
+        <p>📅 12 SEPTEMBRE 2026 — À PARTIR DE 18H</p>
+        <p>📍 CHÂTEAU DE LA VILLE VOISIN — AUGAN (56800), FRANCE</p>
+    </div>
+
+    <div class="event-card finished">
+        <div class="event-status">TERMINÉ</div>
+        <h3>FÊTE DE LA MUSIQUE</h3>
+        <p>📅 21 JUIN 2026</p>
+        <p>📍 LORIENT</p>
+    </div>
+
+</section>
+</body>
+</html>
